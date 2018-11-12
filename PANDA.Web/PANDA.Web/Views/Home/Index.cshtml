@@ -1,0 +1,73 @@
+﻿@model PANDA.Models.ViewModels.PackagesViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (this.User.Identity.IsAuthenticated)
+{
+    if (this.User.IsInRole("User"))
+    {
+        <h4 class="text-panda text-center">Hello, @ViewBag.Username</h4>
+    }
+    else
+    {
+        <h4 class="text-panda text-center">Hello, Administrator @ViewBag.Username</h4>
+    }
+    <hr class="hr-2 bg-dark">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <h2 class="text-center text-panda">Pending</h2>
+                <div class="border-panda">
+                    <div class="container-fluid mt-4 mb-4">
+                        @foreach (var package in @Model.PendingPackages)
+                        {
+                            <div class="button-holder d-flex justify-content-between mb-2">
+                                <h3>@package.Description</h3>
+                                <a asp-controller="Packages" asp-action="Details" asp-route-id="@package.Id" class="btn bg-panda text-white">Details</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <h2 class="text-center text-panda">Shipped</h2>
+                <div class="border-panda">
+                    <div class="container-fluid mt-4 mb-4">
+                        @foreach (var package in @Model.ShippedPackages)
+                        {
+                            <div class="button-holder d-flex justify-content-between mb-2">
+                                <h3>@package.Description</h3>
+                                <a asp-controller="Packages" asp-action="Details" asp-route-id="@package.Id" class="btn bg-panda text-white">Details</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <h2 class="text-center text-panda">Delivered</h2>
+                <div class="border-panda">
+                    <div class="container-fluid mt-4 mb-4">
+                        @foreach (var package in @Model.DeliveredPackages)
+                        {
+                            <div class="button-holder d-flex justify-content-between mb-2">
+                                <h3>@package.Description</h3>
+                                <a asp-controller="Packages" asp-action="Acquire" asp-route-id="@package.Id" class="btn bg-panda text-white">Acquire</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="jumbotron mt-3 bg-panda">
+        <h1 class="text-white">Welcome to PANDA Delivery Services.</h1>
+        <hr class="bg-white hr-2" />
+        <h3 class="text-white"><a href="/identity/account/login">Login</a> if you have an account.</h3>
+        <h3 class="text-white"><a href="/identity/account/register">Register</a> if you don't.</h3>
+    </div>
+}

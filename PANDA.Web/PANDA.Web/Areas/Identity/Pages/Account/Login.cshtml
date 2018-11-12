@@ -1,0 +1,27 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<h1 class="text-center text-panda">Login</h1>
+<hr class="bg-panda w-50 hr-2"/>
+
+<form method="post" class="mx-auto w-50">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Input.UserName" class="text-panda"></label>
+        <input asp-for="Input.UserName" class="form-control"/>
+        <span asp-validation-for="Input.UserName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.Password" class="text-panda"></label>
+        <input asp-for="Input.Password" class="form-control"/>
+        <span asp-validation-for="Input.Password" class="text-danger"></span>
+    </div>
+
+    <div class="button-holder d-flex justify-content-center">
+        <button type="submit" class="btn bg-panda text-white">Login</button>
+    </div>
+</form>

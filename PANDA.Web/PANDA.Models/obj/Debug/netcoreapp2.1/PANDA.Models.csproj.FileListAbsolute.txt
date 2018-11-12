@@ -1,0 +1,9 @@
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Models\bin\Debug\netcoreapp2.1\PANDA.Models.deps.json
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Models\bin\Debug\netcoreapp2.1\PANDA.Models.dll
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Models\bin\Debug\netcoreapp2.1\PANDA.Models.pdb
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Models\obj\Debug\netcoreapp2.1\PANDA.Models.csprojAssemblyReference.cache
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Models\obj\Debug\netcoreapp2.1\PANDA.Models.csproj.CoreCompileInputs.cache
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Models\obj\Debug\netcoreapp2.1\PANDA.Models.AssemblyInfoInputs.cache
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Models\obj\Debug\netcoreapp2.1\PANDA.Models.AssemblyInfo.cs
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Models\obj\Debug\netcoreapp2.1\PANDA.Models.dll
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Models\obj\Debug\netcoreapp2.1\PANDA.Models.pdb
