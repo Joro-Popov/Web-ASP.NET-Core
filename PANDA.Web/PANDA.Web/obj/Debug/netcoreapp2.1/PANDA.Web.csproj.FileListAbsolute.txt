@@ -74,3 +74,6 @@ C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\obj\Debug\netcoreapp2
 C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\obj\Debug\netcoreapp2.1\Razor\Views\Packages\Pending.g.cshtml.cs
 C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\obj\Debug\netcoreapp2.1\Razor\Views\Packages\Shipped.g.cshtml.cs
 C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\obj\Debug\netcoreapp2.1\Razor\Views\Packages\Delivered.g.cshtml.cs
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\obj\Debug\netcoreapp2.1\Razor\Views\Shared\AdminMenuItems.g.cshtml.cs
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\obj\Debug\netcoreapp2.1\Razor\Views\Shared\GuestMenuItems.g.cshtml.cs
+C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\obj\Debug\netcoreapp2.1\Razor\Views\Shared\UserMenuItems.g.cshtml.cs

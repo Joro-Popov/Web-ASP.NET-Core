@@ -19,12 +19,17 @@ using PANDA.Models;
 #line default
 #line hidden
 #line 2 "C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\Views\_ViewImports.cshtml"
+using PANDA.Models.Domain;
+
+#line default
+#line hidden
+#line 3 "C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\Views\_ViewImports.cshtml"
 using PANDA.Models.ViewModels;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"71bcf979a66560fb9344bffe564845b981bb4c9e", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8d25b006d9edca456a2baaa3fb4fd012e0d8d84c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8687b5e497f05820afa8d1f626e68df14f36c67b", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PackagesViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Packages", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -141,7 +146,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("</h3>\r\n                                ");
             EndContext();
             BeginContext(943, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d2d5e49e14e644a8b49c0b48c4f1e165", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ba82345335449a483572c05e107d189", async() => {
                 BeginContext(1052, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -213,7 +218,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("</h3>\r\n                                ");
             EndContext();
             BeginContext(1693, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3297ef6d45484ec1833c50141defb987", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9b3dd0f89fb341009bf3f41e94bad9eb", async() => {
                 BeginContext(1802, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -285,7 +290,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("</h3>\r\n                                ");
             EndContext();
             BeginContext(2447, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf4ec56ba06a4e0db7a86a509c2a9121", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d26ce846323e4a92b02941df2132547c", async() => {
                 BeginContext(2556, 7, true);
                 WriteLiteral("Acquire");
                 EndContext();

@@ -19,12 +19,17 @@ using PANDA.Models;
 #line default
 #line hidden
 #line 2 "C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\Views\_ViewImports.cshtml"
+using PANDA.Models.Domain;
+
+#line default
+#line hidden
+#line 3 "C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\Views\_ViewImports.cshtml"
 using PANDA.Models.ViewModels;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3a78342303217e07b676a720d90638ca4c055b04", @"/Views/Packages/Shipped.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8d25b006d9edca456a2baaa3fb4fd012e0d8d84c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8687b5e497f05820afa8d1f626e68df14f36c67b", @"/Views/_ViewImports.cshtml")]
     public class Views_Packages_Shipped : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ShippedViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Deliver", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -131,7 +136,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("</h5></td>\r\n                <td class=\"col-lg-1 d-flex justify-content-center\">\r\n                    ");
             EndContext();
             BeginContext(1597, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e86ef67b2494eb497ae9b3dc2c55f82", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20d9676f0bcc47b3bdd28f209ccd4002", async() => {
                 BeginContext(1680, 7, true);
                 WriteLiteral("Deliver");
                 EndContext();

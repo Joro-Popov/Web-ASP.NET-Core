@@ -19,12 +19,17 @@ using PANDA.Models;
 #line default
 #line hidden
 #line 2 "C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\Views\_ViewImports.cshtml"
+using PANDA.Models.Domain;
+
+#line default
+#line hidden
+#line 3 "C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\Views\_ViewImports.cshtml"
 using PANDA.Models.ViewModels;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8a96fb04ac9c4b8a5eaf85991dd2c42dc7e53553", @"/Views/Packages/Delivered.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8d25b006d9edca456a2baaa3fb4fd012e0d8d84c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8687b5e497f05820afa8d1f626e68df14f36c67b", @"/Views/_ViewImports.cshtml")]
     public class Views_Packages_Delivered : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<DeliveredViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Details", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -131,7 +136,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("</h5></td>\r\n                <td class=\"col-lg-1 d-flex justify-content-center\">\r\n                    ");
             EndContext();
             BeginContext(1588, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb8e1d1396544e31a6b724b42e22009f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63af72cc36d4415c9db710daf8bf4985", async() => {
                 BeginContext(1671, 7, true);
                 WriteLiteral("Details");
                 EndContext();

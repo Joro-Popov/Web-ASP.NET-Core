@@ -19,12 +19,17 @@ using PANDA.Models;
 #line default
 #line hidden
 #line 2 "C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\Views\_ViewImports.cshtml"
+using PANDA.Models.Domain;
+
+#line default
+#line hidden
+#line 3 "C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\Views\_ViewImports.cshtml"
 using PANDA.Models.ViewModels;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"391c3ebb79e9b85ce4fb40e1887d903adac61dc1", @"/Views/Packages/Pending.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8d25b006d9edca456a2baaa3fb4fd012e0d8d84c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8687b5e497f05820afa8d1f626e68df14f36c67b", @"/Views/_ViewImports.cshtml")]
     public class Views_Packages_Pending : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<PendingViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Ship", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -131,7 +136,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("</h5></td>\r\n                    <td class=\"col-lg-1 d-flex justify-content-center\">\r\n                        ");
             EndContext();
             BeginContext(1633, 88, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13a6d7f21e544ee0a5136c98faad0561", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7476023ead1b461196e74cccc890c061", async() => {
                 BeginContext(1713, 4, true);
                 WriteLiteral("Ship");
                 EndContext();
