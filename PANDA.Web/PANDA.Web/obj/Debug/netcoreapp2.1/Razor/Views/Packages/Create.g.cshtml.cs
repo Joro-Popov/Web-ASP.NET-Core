@@ -68,7 +68,7 @@ using PANDA.Models.ViewModels;
             ");
             EndContext();
             BeginContext(311, 1825, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37b3a996ae6648a3a0fb2dd53be4dc96", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ca18d653f3c4835994581b347cb7d64", async() => {
                 BeginContext(357, 1185, true);
                 WriteLiteral(@"
                 <div class=""form-group"">
@@ -93,7 +93,7 @@ using PANDA.Models.ViewModels;
                 WriteLiteral("v class=\"text-center\">\r\n                    Recipient\r\n                    <div>\r\n                        <select name=\"Recipient\">\r\n                            ");
                 EndContext();
                 BeginContext(1542, 75, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d618b0012d34565867fb13b80ca0b67", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a9f8ec1638b140bbb179569a92031fc6", async() => {
                     BeginContext(1586, 22, true);
                     WriteLiteral("-- Choose Recipient --");
                     EndContext();
@@ -124,7 +124,7 @@ using PANDA.Models.ViewModels;
                 WriteLiteral("                                ");
                 EndContext();
                 BeginContext(1741, 37, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ac6a56e987f4db5bfd6b178af497c3d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea6913768f2a4c7d9c480f2c30d73a5e", async() => {
                     BeginContext(1765, 4, false);
 #line 37 "C:\Users\JORO\Desktop\Web-ASP.NET-Core\PANDA.Web\PANDA.Web\Views\Packages\Create.cshtml"
                                                   Write(user);

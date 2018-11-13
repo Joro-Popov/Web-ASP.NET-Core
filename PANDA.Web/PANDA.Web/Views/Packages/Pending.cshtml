@@ -25,7 +25,7 @@
                     <td class="col-lg-3 d-flex justify-content-center"><h5>@package.ShippingAddress</h5></td>
                     <td class="col-lg-2 d-flex justify-content-center"><h5>@package.Recipient</h5></td>
                     <td class="col-lg-1 d-flex justify-content-center">
-                        <a href="/Packages/Ship?id=@package.Id" class="btn bg-panda text-white">Ship</a>
+                        <a asp-controller="Packages" asp-action="Ship" asp-route-id="@package.Id" class="btn bg-panda text-white">Ship</a>
                     </td>
                 </tr>
             }
