@@ -121,7 +121,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("</h5></td>\r\n                <td class=\"col-lg-1 d-flex justify-content-center\">\r\n                    ");
             EndContext();
             BeginContext(1366, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b8520ffbcc9743eaaba8b2051229d963", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac491ba64d354e3ba239cb4a52a637e8", async() => {
                 BeginContext(1475, 7, true);
                 WriteLiteral("Details");
                 EndContext();

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<string>
+﻿@model CreatePackageViewModel
 
 <div class="container">
     <div class="row">
@@ -8,21 +8,21 @@
             <h1 class="text-panda font-weight-normal" align="center">Create Package</h1>
             <hr style="height: 2px" class="bg-panda" />
 
-            <form method="post" action="/Packages/Create">
+            <form asp-controller="Packages" asp-action="Create" method="post">
                 <div class="form-group">
-                    <label for="Description">Description</label>
-                    <input type="text" class="form-control" name="Description" id="Description" placeholder="Description...">
+                    <label asp-for="@Model.Description">Description</label>
+                    <input asp-for="@Model.Description" class="form-control" placeholder="Description...">
                 </div>
                 <div class="row">
                     <div class="col form-group">
-                        <label for="Weight">Weight</label>
-                        <input type="text" name="Weight" class="form-control" id="Weight" placeholder="Weight...">
+                        <label asp-for="@Model.Weight">Weight</label>
+                        <input asp-for="@Model.Weight" class="form-control" placeholder="Weight...">
                     </div>
                     <div class="col">
                     </div>
                     <div class="col form-group">
-                        <label for="ShippingAddress">Shipping Address</label>
-                        <input type="text" name="ShippingAddress" class="form-control" id="ShippingAddress" placeholder="Shipping Address...">
+                        <label asp-for="@Model.ShippingAddress">Shipping Address</label>
+                        <input asp-for="@Model.ShippingAddress" class="form-control" placeholder="Shipping Address...">
                     </div>
                 </div>
 
@@ -32,9 +32,9 @@
                     <div>
                         <select name="Recipient">
                             <option selected="true" disabled="disabled">-- Choose Recipient --</option>
-                            @foreach (var user in @Model)
+                            @foreach (var user in ViewBag.Users)
                             {
-                                <option value ="@user">@user</option>
+                                <option value="@user">@user</option>
                             }
                         </select>
                     </div>

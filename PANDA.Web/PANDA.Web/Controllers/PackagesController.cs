@@ -60,7 +60,9 @@ namespace PANDA.Web.Controllers
         {
             var users = this.userManager.Users.Select(u => u.UserName).ToList();
 
-            return this.View(users);
+            this.ViewBag.Users = users;
+
+            return this.View();
         }
 
         [HttpPost]
