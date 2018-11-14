@@ -48,7 +48,7 @@ namespace CHUSHKA.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                var result = await signInManager.PasswordSignInAsync(input.Username, input.Password,lockoutOnFailure: false, isPersistent:false);
+                var result = await signInManager.PasswordSignInAsync(input.Username, input.Password, lockoutOnFailure: false, isPersistent:false);
 
                 if (result.Succeeded)
                 {

@@ -4,13 +4,16 @@
 <hr class="bg-secondary half-width" />
 
 <form class="mx-auto half-width" method="post" action="/users/login">
+    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
         <label asp-for="@Model.Username">Username</label>
         <input asp-for="@Model.Username" class="form-control" placeholder="Username...">
+        <span asp-validation-for="@Model.Username" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="@Model.Password">Password</label>
         <input asp-for="@Model.Password" class="form-control" placeholder="Password...">
+        <span asp-validation-for="@Model.Username" class="text-danger"></span>
     </div>
     <div class="button-holder d-flex justify-content-center">
         <button type="submit" class="btn chushka-bg-color">Login</button>
