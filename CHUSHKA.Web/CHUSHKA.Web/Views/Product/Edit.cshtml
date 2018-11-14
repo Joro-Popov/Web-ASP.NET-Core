@@ -1,5 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model ProductDetailsViewModel
+
+<h1 class="text-center text-mishmash">Create Product</h1>
+<hr class="w-50 hr-2 bg-dark" />
+
+<form asp-route-id="@Model.Id" class="mx-auto w-50" method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Name">Name</label>
+        <input asp-for="@Model.Name" class="form-control" value="@Model.Name">
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Price">Price</label>
+        <input asp-for="@Model.Price" class="form-control" value="@Model.Price">
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Description">Description</label>
+        <textarea asp-for="@Model.Description" class="form-control" >@Model.Description</textarea>
+    </div>
+    <h3 class="text-center">Product Type</h3>
+    <hr class="w-50 hr-2 bg-dark" />
+    <div class="form-group d-flex justify-content-around">
+        <label asp-for="@Model.Type" class="radio-inline">
+            <input asp-for="@Model.Type" type="radio" name="Type" value="Food">Food
+        </label>
+        <label asp-for="@Model.Type" class="radio-inline">
+            <input asp-for="@Model.Type" type="radio" name="Type" value="Domestic">Domestic
+        </label>
+        <label asp-for="@Model.Type" class="radio-inline">
+            <input asp-for="@Model.Type" type="radio" name="Type" value="Health">Health
+        </label>
+        <label asp-for="@Model.Type" class="radio-inline">
+            <input asp-for="@Model.Type" type="radio" name="Type" value="Cosmetic">Cosmetic
+        </label>
+        <label asp-for="@Model.Type" class="radio-inline">
+            <input asp-for="@Model.Type" type="radio" name="Type" value="Other">Other
+        </label>
+    </div>
+    <hr class="w-50 hr-2 bg-dark" />
+
+    <div class="button-holder mt-4 d-flex justify-content-center">
+        <button type="submit" class="btn chushka-bg-color text-white">Edit</button>
+    </div>
+</form>

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CHUSHKA.Data;
+using CHUSHKA.Models.Domain;
+using CHUSHKA.Models.Enumerations;
 using CHUSHKA.Models.ViewModels;
 using CHUSHKA.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -41,13 +43,33 @@ namespace CHUSHKA.Services
             var product = new ProductDetailsViewModel()
             {
                 Description = dbProduct.Description,
-                ProductId = dbProduct.Id,
+                Id = dbProduct.Id,
                 Name = dbProduct.Name,
                 Price = dbProduct.Price,
                 Type = dbProduct.Type.ToString()
             };
 
             return product;
+        }
+
+        public async Task CreateProduct(Product input)
+        {
+            this.dbContext.Products.Add(input);
+            await this.dbContext.SaveChangesAsync();
+        }
+
+        public async Task EditProduct(ProductDetailsViewModel input, int id)
+        {
+            var product = await this.dbContext.Products
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            product.Name = input.Name;
+            product.Price = input.Price;
+            product.Description = input.Description;
+            product.Type = (ProductType) Enum.Parse(typeof(ProductType), input.Type, true);
+
+            this.dbContext.Update(product);
+            await this.dbContext.SaveChangesAsync();
         }
     }
 }

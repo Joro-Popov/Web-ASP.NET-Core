@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using CHUSHKA.Models.Domain;
 using CHUSHKA.Models.ViewModels;
 
 namespace CHUSHKA.Services.Interfaces
@@ -11,5 +10,9 @@ namespace CHUSHKA.Services.Interfaces
         Task<IEnumerable<ProductViewModel>> GetAllProducts();
 
         Task<ProductDetailsViewModel> GetProductById(int id);
+
+        Task CreateProduct(Product input);
+
+        Task EditProduct(ProductDetailsViewModel input, int id);
     }
 }

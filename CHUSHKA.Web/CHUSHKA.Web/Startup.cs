@@ -40,6 +40,7 @@ namespace CHUSHKA.Web
                     options.Password.RequiredLength = 6;
                     options.Password.RequiredUniqueChars = 0;
                 })
+                .AddDefaultUI()
                 .AddEntityFrameworkStores<ChushkaDbContext>()
                 .AddDefaultTokenProviders();
 
