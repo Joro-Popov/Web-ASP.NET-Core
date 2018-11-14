@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CHUSHKA.Web.ViewModels
+namespace CHUSHKA.Models.ViewModels
 {
     public class RegisterViewModel
     {

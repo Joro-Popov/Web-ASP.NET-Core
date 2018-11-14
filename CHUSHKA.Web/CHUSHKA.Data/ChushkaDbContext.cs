@@ -1,4 +1,5 @@
 ﻿using CHUSHKA.Models;
+using CHUSHKA.Models.Domain;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

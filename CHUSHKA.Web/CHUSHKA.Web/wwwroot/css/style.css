@@ -44,6 +44,6 @@ footer {
     width: 98%;
 }
 
-/*.product {*/
-	/*word-wrap: break-word;*/
-/*}*/
+.product {
+	word-wrap: break-word;
+}

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CHUSHKA.Models
+namespace CHUSHKA.Models.Domain
 {
     public class Order
     {

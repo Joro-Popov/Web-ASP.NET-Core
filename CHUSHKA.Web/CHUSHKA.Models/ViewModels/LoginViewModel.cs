@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
 
-namespace CHUSHKA.Web.ViewModels
+namespace CHUSHKA.Models.ViewModels
 {
     public class LoginViewModel
     {

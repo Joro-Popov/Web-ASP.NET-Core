@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using CHUSHKA.Data;
 using CHUSHKA.Models;
+using CHUSHKA.Models.Domain;
+using CHUSHKA.Services;
+using CHUSHKA.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -42,6 +45,7 @@ namespace CHUSHKA.Web
 
             services.AddScoped<RoleManager<ApplicationUserRole>>();
             services.AddScoped<UserManager<ApplicationUser>>();
+            services.AddScoped<IProductService, ProductService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

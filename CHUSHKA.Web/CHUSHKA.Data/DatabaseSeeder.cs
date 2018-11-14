@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using CHUSHKA.Models;
+using CHUSHKA.Models.Domain;
 using Microsoft.AspNetCore.Identity;
 
 namespace CHUSHKA.Data

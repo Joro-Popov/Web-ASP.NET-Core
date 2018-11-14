@@ -1,4 +1,6 @@
-﻿@if (!this.User.Identity.IsAuthenticated)
+﻿@model IEnumerable<ProductViewModel>
+
+@if (!this.User.Identity.IsAuthenticated)
 {
     <div class="jumbotron mt-3 chushka-bg-color">
         <h1>Welcome to Chushka Universal Web Shop</h1>
@@ -7,19 +9,38 @@
         <h3><a asp-controller="Users" asp-action="Register" class="nav-link-dark">Register</a> if you don't.</h3>
     </div>
 }
-else if (this.User.IsInRole("User"))
-{
-    <div class="container-fluid text-center">
-        <h2>Greetings, @this.User.Identity.Name!</h2>
-        <h4>Feel free to view and order any of our products.</h4>
-    </div>
-    <hr class="hr-2 bg-dark" />
-}
 else
 {
-    <div class="container-fluid text-center">
-        <h2>Greetings, admin!</h2>
-        <h4>Enjoy your work today!</h4>
+    if (this.User.IsInRole("User"))
+    {
+        <div class="container-fluid text-center">
+            <h2>Greetings, @this.User.Identity.Name!</h2>
+            <h4>Feel free to view and order any of our products.</h4>
+        </div>
+        <hr class="hr-2 bg-dark" />
+    }
+    else
+    {
+        <div class="container-fluid text-center">
+            <h2>Greetings, admin!</h2>
+            <h4>Enjoy your work today!</h4>
+        </div>
+        <hr class="hr-2 bg-dark" />
+    }
+
+    <div class="container-fluid product-holder">
+        <div class="row d-flex justify-content-around">
+            @foreach (var product in @Model)
+            {<div class="col-md-2 mx-3 chushka-bg-color rounded py-3 mb-4">
+                 <a asp-controller="Product" asp-action="Details" asp-route-id="@product.ProductId">
+                     <h4 class="task-title text-white text-center my-3">@product.Name</h4>
+                     <hr class="bg-white hr-2 w-75">
+                     <h6 class="task-title text-white text-center my-4">@product.ShortDescription</h6>
+                     <hr class="bg-white hr-2 w-75">
+                     <h6 class="task-title text-white text-center my-4">$@product.Price</h6>
+                 </a>    
+             </div>
+            }
+        </div>
     </div>
-    <hr class="hr-2 bg-dark"/>
 }

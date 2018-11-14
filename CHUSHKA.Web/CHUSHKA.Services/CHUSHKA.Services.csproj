@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CHUSHKA.Data\CHUSHKA.Data.csproj" />
+    <ProjectReference Include="..\CHUSHKA.Models\CHUSHKA.Models.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
-namespace CHUSHKA.Models
+namespace CHUSHKA.Models.Domain
 {
     public class ApplicationUser : IdentityUser<int>
     {

@@ -1,10 +1,11 @@
 ﻿using System.Threading.Tasks;
 using CHUSHKA.Models;
-using CHUSHKA.Web.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using CHUSHKA.Models.Domain;
+using CHUSHKA.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 
 namespace CHUSHKA.Web.Controllers
