@@ -71,7 +71,7 @@ using PANDA.Models.ViewModels;
                 ");
             EndContext();
             BeginContext(538, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51dda361c81e48bda350b7f024ccc86b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "160ce277b7c34da5a79ddb84be7aa2ef", async() => {
                 BeginContext(621, 4, true);
                 WriteLiteral("Home");
                 EndContext();
@@ -96,7 +96,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("\r\n            </li>\r\n        </ul>\r\n        ");
             EndContext();
             BeginContext(673, 32, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fe34fd830fca4632ab234e21939e5985", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "363f9758df55446cacd316d550554f35", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

@@ -146,7 +146,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("</h3>\r\n                                ");
             EndContext();
             BeginContext(943, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ba82345335449a483572c05e107d189", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12af1e5cb93745f5b69cf12df6eb125d", async() => {
                 BeginContext(1052, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -218,7 +218,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("</h3>\r\n                                ");
             EndContext();
             BeginContext(1693, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9b3dd0f89fb341009bf3f41e94bad9eb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91e9be19fe954820a2e5e5efaba23d7b", async() => {
                 BeginContext(1802, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -290,7 +290,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("</h3>\r\n                                ");
             EndContext();
             BeginContext(2447, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d26ce846323e4a92b02941df2132547c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3558c35f441b4fc7ad1f1ba38f98f9e6", async() => {
                 BeginContext(2556, 7, true);
                 WriteLiteral("Acquire");
                 EndContext();

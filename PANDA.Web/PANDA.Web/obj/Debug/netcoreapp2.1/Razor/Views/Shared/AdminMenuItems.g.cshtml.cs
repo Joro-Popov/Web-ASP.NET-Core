@@ -77,7 +77,7 @@ using PANDA.Models.ViewModels;
                 ");
             EndContext();
             BeginContext(539, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "95bcf29d919b4a1ebb13d1798e16e22f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e145f359bdfb41709bb4ccf9372c055b", async() => {
                 BeginContext(628, 7, true);
                 WriteLiteral("Pending");
                 EndContext();
@@ -102,7 +102,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                ");
             EndContext();
             BeginContext(711, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3fc4c5c0ef104d72846213dbd284812b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "125f05da6b1c4592a8274c20899448a5", async() => {
                 BeginContext(800, 7, true);
                 WriteLiteral("Shipped");
                 EndContext();
@@ -127,7 +127,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                ");
             EndContext();
             BeginContext(883, 104, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb1cf0a120f24f91b39390fe862c7c59", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf2b620b287e4f9ea5d257979c2b98eb", async() => {
                 BeginContext(974, 9, true);
                 WriteLiteral("Delivered");
                 EndContext();
@@ -152,7 +152,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                ");
             EndContext();
             BeginContext(1059, 99, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e550c5b1c7d4550bf5ebef7ab19593a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9fb9396853304d95ae56689c673be12d", async() => {
                 BeginContext(1147, 7, true);
                 WriteLiteral("Package");
                 EndContext();
@@ -177,7 +177,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("\r\n            </li>\r\n        </ul>\r\n    </div>\r\n    <div class=\"collapse navbar-collapse d-flex justify-content-end\" id=\"navbarNav\">\r\n        <ul class=\"navbar-nav\">\r\n            <li class=\"nav-item\">\r\n                ");
             EndContext();
             BeginContext(1376, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ad804272fe04be8893182675ef33c5e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88306309bb03499ea36ed235e2d658e3", async() => {
                 BeginContext(1459, 4, true);
                 WriteLiteral("Home");
                 EndContext();
@@ -202,7 +202,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                ");
             EndContext();
             BeginContext(1539, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "64b1b4522eed4517925b1d2a74f095c0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3c0ab364e074d09bc3beb5a31f90e3e", async() => {
                 BeginContext(1626, 7, true);
                 WriteLiteral("Receipt");
                 EndContext();
@@ -227,7 +227,7 @@ using PANDA.Models.ViewModels;
             WriteLiteral("\r\n            </li>\r\n        </ul>\r\n        ");
             EndContext();
             BeginContext(1681, 32, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8a26bdd4f562416ab699feda45d00d6b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6b546db33fdf4545bcb2879f3f9ca7db", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
