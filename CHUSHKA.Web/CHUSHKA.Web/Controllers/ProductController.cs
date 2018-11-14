@@ -5,6 +5,7 @@ using CHUSHKA.Models.Enumerations;
 using CHUSHKA.Models.ViewModels;
 using CHUSHKA.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CHUSHKA.Web.Controllers
@@ -12,20 +13,20 @@ namespace CHUSHKA.Web.Controllers
     public class ProductController : BaseController
     {
         private readonly IProductService productService;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, UserManager<ApplicationUser> userManager)
         {
             this.productService = productService;
+            this.userManager = userManager;
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public async Task<IActionResult> Details(int id)
         {
             var product = await this.productService.GetProductById(id);
-
-            // TODO: handle if product does not exists
-
+            
             return this.View(product);
         }
 
@@ -59,11 +60,13 @@ namespace CHUSHKA.Web.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public IActionResult Order(int id)
+        [Authorize]
+        public async Task<IActionResult> Order(int productId)
         {
-            // TODO: process order
+            var user = await this.userManager.GetUserAsync(this.User);
 
+            await this.productService.OrderProduct(user.Id, productId);
+            
             return this.RedirectToAction("Index","Home");
         }
 
@@ -91,9 +94,18 @@ namespace CHUSHKA.Web.Controllers
 
         [HttpGet]
         [Authorize(Roles = "Admin")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            //TODO: process delete
+            var product = await this.productService.GetProductById(id);
+
+            return this.View(product);
+        }
+        
+        [HttpPost("Users/Delete/{id}")]
+        [Authorize(Roles ="Admin")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            await this.productService.DeleteProduct(id);
 
             return this.RedirectToAction("Index", "Home");
         }

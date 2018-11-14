@@ -1,0 +1,29 @@
+﻿@model IEnumerable<OrderViewModel>
+@{
+    var index = 1;
+}
+<h1 class="text-center">All Orders</h1>
+<hr class="hr-2 bg-dark"/>
+<table class="table w-75 mx-auto table-hover">
+    <thead>
+    <tr class="row">
+        <th class="col-md-1">#</th>
+        <th class="col-md-2">Order ID</th>
+        <th class="col-md-3">Customer</th>
+        <th class="col-md-3">Product</th>
+        <th class="col-md-3">Ordered On</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var order in Model)
+    {
+        <tr class="row">
+            <th class="col-md-1">@index</th>
+            <td class="col-md-2">@order.OrderId</td>
+            <td class="col-md-3">@order.Customer</td>
+            <td class="col-md-3">@order.Product</td>
+            <td class="col-md-3">@order.OrderedOn</td>
+        </tr>
+    }
+    </tbody>
+</table>

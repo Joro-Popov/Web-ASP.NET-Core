@@ -6,7 +6,7 @@ namespace CHUSHKA.Models.ViewModels
 {
     public class ProductDetailsViewModel
     {
-        public int Id { get; set; }
+        public int ProductId { get; set; }
 
         public string Name { get; set; }
 

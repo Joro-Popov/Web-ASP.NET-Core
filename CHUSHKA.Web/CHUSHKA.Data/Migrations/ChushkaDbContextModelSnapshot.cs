@@ -19,7 +19,7 @@ namespace CHUSHKA.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CHUSHKA.Models.ApplicationUser", b =>
+            modelBuilder.Entity("CHUSHKA.Models.Domain.ApplicationUser", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -73,7 +73,7 @@ namespace CHUSHKA.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("CHUSHKA.Models.ApplicationUserRole", b =>
+            modelBuilder.Entity("CHUSHKA.Models.Domain.ApplicationUserRole", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -98,7 +98,7 @@ namespace CHUSHKA.Data.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
-            modelBuilder.Entity("CHUSHKA.Models.Order", b =>
+            modelBuilder.Entity("CHUSHKA.Models.Domain.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -119,7 +119,7 @@ namespace CHUSHKA.Data.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("CHUSHKA.Models.Product", b =>
+            modelBuilder.Entity("CHUSHKA.Models.Domain.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -221,14 +221,14 @@ namespace CHUSHKA.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("CHUSHKA.Models.Order", b =>
+            modelBuilder.Entity("CHUSHKA.Models.Domain.Order", b =>
                 {
-                    b.HasOne("CHUSHKA.Models.ApplicationUser", "Client")
+                    b.HasOne("CHUSHKA.Models.Domain.ApplicationUser", "Client")
                         .WithMany("UserOrders")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("CHUSHKA.Models.Product", "Product")
+                    b.HasOne("CHUSHKA.Models.Domain.Product", "Product")
                         .WithMany("ProductOrders")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -236,7 +236,7 @@ namespace CHUSHKA.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.HasOne("CHUSHKA.Models.ApplicationUserRole")
+                    b.HasOne("CHUSHKA.Models.Domain.ApplicationUserRole")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -244,7 +244,7 @@ namespace CHUSHKA.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
-                    b.HasOne("CHUSHKA.Models.ApplicationUser")
+                    b.HasOne("CHUSHKA.Models.Domain.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -252,7 +252,7 @@ namespace CHUSHKA.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
-                    b.HasOne("CHUSHKA.Models.ApplicationUser")
+                    b.HasOne("CHUSHKA.Models.Domain.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -260,12 +260,12 @@ namespace CHUSHKA.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
                 {
-                    b.HasOne("CHUSHKA.Models.ApplicationUserRole")
+                    b.HasOne("CHUSHKA.Models.Domain.ApplicationUserRole")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("CHUSHKA.Models.ApplicationUser")
+                    b.HasOne("CHUSHKA.Models.Domain.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -273,7 +273,7 @@ namespace CHUSHKA.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
-                    b.HasOne("CHUSHKA.Models.ApplicationUser")
+                    b.HasOne("CHUSHKA.Models.Domain.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

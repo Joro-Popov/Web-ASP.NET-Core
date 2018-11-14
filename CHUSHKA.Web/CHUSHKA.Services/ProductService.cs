@@ -20,6 +20,7 @@ namespace CHUSHKA.Services
         {
             this.dbContext = dbContext;
         }
+
         public async Task<IEnumerable<ProductViewModel>> GetAllProducts()
         {
             var products = await this.dbContext.Products
@@ -43,7 +44,7 @@ namespace CHUSHKA.Services
             var product = new ProductDetailsViewModel()
             {
                 Description = dbProduct.Description,
-                Id = dbProduct.Id,
+                ProductId = dbProduct.Id,
                 Name = dbProduct.Name,
                 Price = dbProduct.Price,
                 Type = dbProduct.Type.ToString()
@@ -69,6 +70,28 @@ namespace CHUSHKA.Services
             product.Type = (ProductType) Enum.Parse(typeof(ProductType), input.Type, true);
 
             this.dbContext.Update(product);
+            await this.dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteProduct(int id)
+        {
+            var product = await this.dbContext.Products
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            this.dbContext.Products.Remove(product);
+            await this.dbContext.SaveChangesAsync();
+        }
+
+        public async Task OrderProduct(int userId, int productId)
+        {
+            var order = new Order()
+            {
+                ClientId = userId,
+                ProductId = productId,
+                OrderedOn = DateTime.UtcNow
+            };
+            
+            await this.dbContext.Orders.AddAsync(order);
             await this.dbContext.SaveChangesAsync();
         }
     }

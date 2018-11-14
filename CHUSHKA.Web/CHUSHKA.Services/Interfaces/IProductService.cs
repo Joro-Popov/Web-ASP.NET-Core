@@ -14,5 +14,9 @@ namespace CHUSHKA.Services.Interfaces
         Task CreateProduct(Product input);
 
         Task EditProduct(ProductDetailsViewModel input, int id);
+
+        Task DeleteProduct(int id);
+
+        Task OrderProduct(int userId, int productId);
     }
 }
