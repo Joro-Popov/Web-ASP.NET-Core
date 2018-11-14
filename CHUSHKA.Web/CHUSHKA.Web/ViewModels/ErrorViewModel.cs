@@ -1,6 +1,4 @@
-using System;
-
-namespace CHUSHKA.Web.Models
+namespace CHUSHKA.Web.ViewModels
 {
     public class ErrorViewModel
     {

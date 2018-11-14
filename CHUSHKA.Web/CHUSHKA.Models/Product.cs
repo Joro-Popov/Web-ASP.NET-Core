@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CHUSHKA.Models.Enumerations;
 
 namespace CHUSHKA.Models
 {

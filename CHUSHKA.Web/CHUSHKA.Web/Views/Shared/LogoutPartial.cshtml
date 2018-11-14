@@ -1,0 +1,15 @@
+@using CHUSHKA.Models
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-controller="Users" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
+        <ul class="navbar-nav left-side">
+            <li class="nav-item">
+                <button type="submit" class="btn btn-link nav-link nav-link-white active text-white">Logout</button>
+            </li>
+        </ul>
+    </form>
+}
