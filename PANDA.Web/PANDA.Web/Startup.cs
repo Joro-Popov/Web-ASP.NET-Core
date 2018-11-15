@@ -91,7 +91,7 @@ namespace PANDA.Web
 
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}/{name?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
 
             InitializeDatabase.SeedData(context, userManager);

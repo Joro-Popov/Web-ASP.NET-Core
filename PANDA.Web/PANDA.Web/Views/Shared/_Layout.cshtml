@@ -14,7 +14,7 @@
         <header>
            @if (!this.User.Identity.IsAuthenticated)
            {
-              <partial name="GuestMenuItems"/>
+              <partial name="GuestMenuItems"/> 
            }
            else if (this.User.IsInRole("Admin"))
            {

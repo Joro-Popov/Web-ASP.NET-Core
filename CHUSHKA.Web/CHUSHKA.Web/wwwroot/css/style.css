@@ -20,7 +20,7 @@ textarea {
     color: #F8F8FF;
 }
 
-.nav-link-white {
+.nav-link-dark {
     color: #C0C0C0
 }
 
@@ -45,5 +45,5 @@ footer {
 }
 
 .product {
-	word-wrap: break-word;
+    word-wrap: break-word;
 }
