@@ -8,15 +8,18 @@ using Eventures.Models;
 using Eventures.Models.ViewModels;
 using Eventures.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Eventures.Services
 {
     public class EventService : IEventService
     {
+        private readonly ILogger<EventService> logger;
         public EventuresDbContext Context { get; }
 
-        public EventService(EventuresDbContext context)
+        public EventService(EventuresDbContext context, ILogger<EventService> logger)
         {
+            this.logger = logger;
             Context = context;
         }
 
@@ -49,6 +52,8 @@ namespace Eventures.Services
 
             this.Context.Events.Add(newEvent);
             this.Context.SaveChanges();
+
+            this.logger.LogInformation($"Event created: {newEvent.Name}");
         }
     }
 }
