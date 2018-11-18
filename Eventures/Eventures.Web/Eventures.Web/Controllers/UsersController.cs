@@ -49,7 +49,7 @@ namespace Eventures.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                var result = await signInManager.PasswordSignInAsync(input.Username, input.Password, lockoutOnFailure: false, isPersistent: false);
+                var result = await signInManager.PasswordSignInAsync(input.Username, input.Password, input.RememberMe, lockoutOnFailure: false);
 
                 if (result.Succeeded)
                 {
@@ -93,14 +93,7 @@ namespace Eventures.Web.Controllers
 
             var result = await userManager.CreateAsync(user, input.Password);
 
-            if (this.userManager.Users.Count() == 1)
-            {
-                await this.userManager.AddToRoleAsync(user, "Admin");
-            }
-            else
-            {
-                await this.userManager.AddToRoleAsync(user, "User");
-            }
+            await this.userManager.AddToRoleAsync(user, "User");
 
             if (result.Succeeded)
             {

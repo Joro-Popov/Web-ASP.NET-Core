@@ -20,6 +20,9 @@ textarea {
     color: #161616;
 }
 
+.jumbotron-hr-color {
+    color: darkgray
+}
 .nav-link-dark {
     color: #161616;
 }
