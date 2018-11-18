@@ -34,5 +34,21 @@ namespace Eventures.Services
 
             return events;
         }
+
+        public void CreateEvent(CreateViewModel model)
+        {
+            var newEvent = new Event()
+            {
+                Name = model.Name,
+                TotalTickets = model.TotalTickets,
+                PricePerTicket = model.PricePerTicket,
+                End = model.End,
+                Start = model.Start,
+                Place = model.Place
+            };
+
+            this.Context.Events.Add(newEvent);
+            this.Context.SaveChanges();
+        }
     }
 }

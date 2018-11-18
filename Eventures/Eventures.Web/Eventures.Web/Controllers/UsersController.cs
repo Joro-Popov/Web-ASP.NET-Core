@@ -114,6 +114,8 @@ namespace Eventures.Web.Controllers
         [Authorize]
         public async Task<IActionResult> Logout(string returnUrl = null)
         {
+            if (this.User.Identity.IsAuthenticated) return this.RedirectToAction("Index", "Home");
+
             await signInManager.SignOutAsync();
 
             if (returnUrl != null)

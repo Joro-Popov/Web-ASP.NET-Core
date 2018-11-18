@@ -10,5 +10,7 @@ namespace Eventures.Services.Interfaces
     public interface IEventService
     {
         Task<IEnumerable<EventViewModel>> GetAllEventsAsync();
+
+        void CreateEvent(CreateViewModel model);
     }
 }
