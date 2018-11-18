@@ -17,3 +17,11 @@ else if (this.User.IsInRole("User"))
         <h3 class="jumbotron-hr-color">Eventures wishes you an exciting experience.</h3>
     </div>
 }
+else
+{
+    <div class="jumbotron mt-3 eventures-bg-color text-center">
+        <h1>Greetings, Administrator - @UserManager.GetUserAsync(this.User).GetAwaiter().GetResult().FirstName</h1>
+        <hr class="jumbotron-hr-color hr-2" />
+        <h3 class="jumbotron-hr-color">Enjoy your work.</h3>
+    </div>
+}

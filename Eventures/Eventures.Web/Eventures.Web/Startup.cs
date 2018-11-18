@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Eventures.Data;
 using Eventures.Models;
+using Eventures.Services;
+using Eventures.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -56,6 +58,7 @@ namespace Eventures.Web
             services.AddScoped<RoleManager<IdentityRole>>();
             services.AddScoped<UserManager<ApplicationUser>>();
             services.AddScoped<SignInManager<ApplicationUser>>();
+            services.AddScoped<IEventService, EventService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
