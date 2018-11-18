@@ -43,7 +43,7 @@ namespace Eventures.Data.Migrations
                     AccessFailedCount = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(nullable: false),
                     LastName = table.Column<string>(nullable: false),
-                    UCN = table.Column<Guid>(nullable: false)
+                    UCN = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

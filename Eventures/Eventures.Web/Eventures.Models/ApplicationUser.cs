@@ -15,6 +15,6 @@ namespace Eventures.Models
         public string LastName { get; set; }
 
         [Required]
-        public Guid UCN { get; set; }
+        public string UCN { get; set; }
     }
 }

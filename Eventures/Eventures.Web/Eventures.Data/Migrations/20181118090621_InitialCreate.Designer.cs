@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eventures.Data.Migrations
 {
     [DbContext(typeof(EventuresDbContext))]
-    [Migration("20181118084611_InitialCreate")]
+    [Migration("20181118090621_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,7 +62,8 @@ namespace Eventures.Data.Migrations
 
                     b.Property<bool>("TwoFactorEnabled");
 
-                    b.Property<Guid>("UCN");
+                    b.Property<string>("UCN")
+                        .IsRequired();
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);

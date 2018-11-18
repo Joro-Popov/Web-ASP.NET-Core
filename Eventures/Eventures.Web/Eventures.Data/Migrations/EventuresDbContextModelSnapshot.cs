@@ -60,7 +60,8 @@ namespace Eventures.Data.Migrations
 
                     b.Property<bool>("TwoFactorEnabled");
 
-                    b.Property<Guid>("UCN");
+                    b.Property<string>("UCN")
+                        .IsRequired();
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
