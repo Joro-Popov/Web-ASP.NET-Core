@@ -61,7 +61,6 @@ namespace Eventures.Web.CustomMiddlewares
                 throw new Exception(string.Join(Environment.NewLine, result.Errors.Select(e => e.Description)));
             }
         }
-
         private static void SeedUsers(UserManager<ApplicationUser> userManager)
         {
             var admin = new ApplicationUser()

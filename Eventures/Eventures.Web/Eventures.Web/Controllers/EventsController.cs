@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Eventures.Models.ViewModels;
 using Eventures.Services.Interfaces;
+using Eventures.Web.Filters;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,8 +33,9 @@ namespace Eventures.Web.Controllers
             return this.View();
         }
 
-        [Authorize(Roles = "Admin")]
         [HttpPost]
+        [TypeFilter(typeof(LogEventFilter))]
+        [Authorize(Roles = "Admin")]
         public IActionResult Create(CreateViewModel model)
         {
             if(!ModelState.IsValid) return this.View();
