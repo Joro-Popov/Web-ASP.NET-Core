@@ -6,6 +6,7 @@ using Eventures.Data;
 using Eventures.Models;
 using Eventures.Services;
 using Eventures.Services.Interfaces;
+using Eventures.Web.CustomMiddlewareExtensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -54,6 +55,7 @@ namespace Eventures.Web
                 .AddDefaultTokenProviders();
 
             services.AddLogging(x => x.AddConsole());
+            services.AddLogging(x => x.AddDebug());
 
             services.AddScoped<RoleManager<IdentityRole>>();
             services.AddScoped<UserManager<ApplicationUser>>();
@@ -88,19 +90,14 @@ namespace Eventures.Web
 
             app.UseAuthentication();
 
+            app.UseDatabaseSeeder();
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            if (env.IsDevelopment())
-            {
-                dbContext.Database.Migrate();
-            }
-
-            DatabaseSeeder.Seed(dbContext, roleManager);
         }
     }
 }
