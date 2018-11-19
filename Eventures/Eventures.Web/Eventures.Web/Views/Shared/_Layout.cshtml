@@ -39,10 +39,10 @@
 </div>
     @RenderSection("Scripts", required: false)
 
-<environment exclude="Development">
+<environment include="Development">
     <script src="~/lib/jquery/dist/jquery-3.3.1.js" asp-append-version="true"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
     <script src="~/lib/jquery/dist/jquery-3.2.1.slim.min.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
 </environment>
 </body>
 </html>

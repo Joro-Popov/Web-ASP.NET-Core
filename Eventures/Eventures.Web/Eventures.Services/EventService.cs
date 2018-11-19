@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,8 +30,8 @@ namespace Eventures.Services
                 .Select(e => new EventViewModel()
                 {
                     Name = e.Name,
-                    Start = e.Start,
-                    End = e.End,
+                    Start = e.Start.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture),
+                    End = e.End.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture),
                     Place = e.Place
                 })
                 .ToListAsync();

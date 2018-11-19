@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="nav navbar-nav">
                 <li class="nav-item">
                     <a asp-controller="Home" asp-action="Index" class="nav-link nav-link-dark font-weight-bold">Home</a>
                 </li>
@@ -16,8 +16,8 @@
                         Events
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Action</a>
+                        <a asp-controller="Events" asp-action="All" class="dropdown-item">All Events</a>
+                        <a asp-controller="Events" asp-action="Create" class="dropdown-item">Create Event</a>
                     </div>
                 </li>
             </ul>

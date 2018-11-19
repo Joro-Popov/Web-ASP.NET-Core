@@ -20,6 +20,9 @@ textarea {
     color: #161616;
 }
 
+.hr-jumbotron {
+    background-color: darkgray;
+}
 .jumbotron-hr-color {
     color: darkgray
 }
@@ -50,7 +53,6 @@ footer {
     border: 0;
     width: 100%;
 }
-
 .product {
     word-wrap: break-word;
 }

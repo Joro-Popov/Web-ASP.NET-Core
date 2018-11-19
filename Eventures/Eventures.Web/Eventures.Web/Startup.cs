@@ -28,13 +28,9 @@ namespace Eventures.Web
         }
 
         public IConfiguration Configuration { get; }
-
-        // Initialize services for Entity Framework, Identity and MVC
-        // This method is called before the Configure !!!
+        
         public void ConfigureServices(IServiceCollection services)
         {
-            // first calls the .AddService methods, then calls .Configure methods !!!
-            
             services.Configure<CookiePolicyOptions>(options =>
             {
                 options.CheckConsentNeeded = context => true;
@@ -55,7 +51,6 @@ namespace Eventures.Web
                 .AddDefaultTokenProviders();
 
             services.AddLogging(x => x.AddConsole());
-            services.AddLogging(x => x.AddDebug());
 
             services.AddScoped<RoleManager<IdentityRole>>();
             services.AddScoped<UserManager<ApplicationUser>>();
@@ -64,15 +59,12 @@ namespace Eventures.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
-
-        // used to specify how the app responds to HTTP requests
+        
         public void Configure(IApplicationBuilder app, 
                               IHostingEnvironment env,
                               EventuresDbContext dbContext,
                               RoleManager<IdentityRole> roleManager) 
         {
-            // Each .use extension method adds a middleware
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
