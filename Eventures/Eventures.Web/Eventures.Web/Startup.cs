@@ -45,7 +45,7 @@ namespace Eventures.Web
                     options.Password.RequireNonAlphanumeric = false;
                     options.Password.RequireUppercase = false;
                     options.Password.RequiredLength = 6;
-                    options.Password.RequiredUniqueChars = 0;
+                    options.Password.RequiredUniqueChars = 0; 
                 })
                 .AddEntityFrameworkStores<EventuresDbContext>()
                 .AddDefaultTokenProviders();
@@ -57,7 +57,10 @@ namespace Eventures.Web
             services.AddScoped<SignInManager<ApplicationUser>>();
             services.AddScoped<IEventService, EventService>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
         
         public void Configure(IApplicationBuilder app, 

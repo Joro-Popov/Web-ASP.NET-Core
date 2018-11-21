@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Eventures.Models;
 using Eventures.Models.ViewModels;
+using Eventures.Web.Filters;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Eventures.Web.Controllers
 {
+    [TypeFilter(typeof(InvalidModelStateFilter))]
     public class UsersController : BaseController
     {
         private readonly SignInManager<ApplicationUser> signInManager;
@@ -62,7 +64,7 @@ namespace Eventures.Web.Controllers
                 }
             }
 
-            return this.View();
+            throw new InvalidOperationException();
         }
 
         [HttpGet]
@@ -80,10 +82,10 @@ namespace Eventures.Web.Controllers
 
             returnUrl = returnUrl ?? Url.Content("~/");
 
-            if (!ModelState.IsValid) return this.View();
+            if (!ModelState.IsValid) throw new InvalidOperationException();
 
             var user = new ApplicationUser
-            {
+            { 
                 UserName = input.Username,
                 Email = input.Email,
                 FirstName = input.FirstName,

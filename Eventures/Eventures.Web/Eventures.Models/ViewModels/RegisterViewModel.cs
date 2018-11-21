@@ -8,15 +8,21 @@ namespace Eventures.Models.ViewModels
     public class RegisterViewModel
     {
         [Required]
+        [RegularExpression("[\\w,-^,_,.,*,~]{3,}", ErrorMessage = "Username is invalid!")]
         public string Username { get; set; }
 
         [Required]
+        [DataType(DataType.Password)]
+        [MinLength(5, ErrorMessage = "Password must be at least 5 characters long")]
         public string Password { get; set; }
 
         [Required]
+        [DataType(DataType.Password)]
+        [Compare(nameof(Password), ErrorMessage = "Passwords do not match!")]
         public string ConfirmPassword { get; set; }
 
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
@@ -26,6 +32,8 @@ namespace Eventures.Models.ViewModels
         public string LastName { get; set; }
 
         [Required]
+        [MinLength(10, ErrorMessage = "UCN must be exactly {1} characters long!")]
+        [MaxLength(10, ErrorMessage = "UCN must be exactly {1} characters long!")]
         public string UCN { get; set; }
     }
 }

@@ -4,7 +4,6 @@
 <hr class="hr-2 eventures-bg-color half-width" />
 
 <form class="mx-auto half-width" method="post">
-    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-row">
         <div class="form-group col-md-6 text-center">
             <label asp-for="@Model.Username" class="font-weight-bold">Username</label>
@@ -26,7 +25,7 @@
         <div class="form-group col-md-6 text-center">
             <label asp-for="@Model.ConfirmPassword" class="font-weight-bold">Confirm Password</label>
             <input asp-for="@Model.ConfirmPassword" type="password" class="form-control" placeholder="Confirm Password...">
-            <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            <span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span>
         </div>
     </div>
     <hr class="hr-2 eventures-bg-color" />
