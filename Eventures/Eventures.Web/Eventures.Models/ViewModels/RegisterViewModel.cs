@@ -26,9 +26,11 @@ namespace Eventures.Models.ViewModels
         public string Email { get; set; }
 
         [Required]
+        [MinLength(3, ErrorMessage = "First Name must be at least {1} characters long!")]
         public string FirstName { get; set; }
 
         [Required]
+        [MinLength(3, ErrorMessage = "Last Name must be at least {1} characters long!")]
         public string LastName { get; set; }
 
         [Required]

@@ -19,8 +19,6 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\fonts\" />
-    <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
-    <Folder Include="wwwroot\lib\jquery-validation\dist\" />
   </ItemGroup>
 
 </Project>

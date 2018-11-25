@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Eventures.Web.Controllers
 {
-    [TypeFilter(typeof(InvalidModelStateFilter))]
     public class UsersController : BaseController
     {
         private readonly SignInManager<ApplicationUser> signInManager;
@@ -49,22 +48,19 @@ namespace Eventures.Web.Controllers
 
             returnUrl = returnUrl ?? Url.Content("~/");
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return this.View();
+
+            var result = await signInManager.PasswordSignInAsync(input.Username, input.Password, input.RememberMe, lockoutOnFailure: false);
+
+            if (result.Succeeded)
             {
-                var result = await signInManager.PasswordSignInAsync(input.Username, input.Password, input.RememberMe, lockoutOnFailure: false);
-
-                if (result.Succeeded)
-                {
-                    return LocalRedirect(returnUrl);
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    return this.View();
-                }
+                return LocalRedirect(returnUrl);
             }
-
-            throw new InvalidOperationException();
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Invalid username or password.");
+                return this.View();
+            }
         }
 
         [HttpGet]
@@ -82,7 +78,7 @@ namespace Eventures.Web.Controllers
 
             returnUrl = returnUrl ?? Url.Content("~/");
 
-            if (!ModelState.IsValid) throw new InvalidOperationException();
+            if (!ModelState.IsValid) return this.View();
 
             var user = new ApplicationUser
             { 
@@ -109,7 +105,7 @@ namespace Eventures.Web.Controllers
                 ModelState.AddModelError(string.Empty, error.Description);
             }
 
-            return this.View();
+            return this.View(input);
         }
 
         [HttpPost]

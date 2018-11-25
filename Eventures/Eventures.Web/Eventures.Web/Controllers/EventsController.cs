@@ -35,11 +35,10 @@ namespace Eventures.Web.Controllers
 
         [HttpPost]
         [TypeFilter(typeof(LogEventFilter))]
-        [TypeFilter(typeof(InvalidModelStateFilter))]
         [Authorize(Roles = "Admin")]
         public IActionResult Create(CreateViewModel model)
         {
-            if(!ModelState.IsValid) throw new InvalidOperationException();
+            if(!ModelState.IsValid) return this.View();
 
             this.EventService.CreateEvent(model);
 

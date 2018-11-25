@@ -7,19 +7,19 @@
     <div class="form-group text-center">
         <label asp-for="@Model.Username" class="font-weight-bold">Username</label>
         <input asp-for="@Model.Username" class="form-control" placeholder="Username...">
-        @*<span asp-validation-for="@Model.Username" class="text-danger"></span>*@
+        <span asp-validation-for="@Model.Username" class="text-danger"></span>
     </div>
     <div class="form-group text-center">
         <label asp-for="@Model.Password" class="font-weight-bold">Password</label>
         <input asp-for="@Model.Password" type="password" class="form-control" placeholder="Password...">
-        @*<span asp-validation-for="@Model.Password" class="text-danger"></span>*@
+        <span asp-validation-for="@Model.Password" class="text-danger"></span>
     </div>
 
-    <hr class="hr-2 eventures-bg-color" />
+    <hr class="hr-2 eventures-bg-color"/>
     <div class="form-group text-center">
-        <input asp-for="RememberMe" type="checkbox" /> Remember me?
+        <input asp-for="RememberMe" type="checkbox"/> Remember me?
     </div>
-    <hr class="hr-2 eventures-bg-color" />
+    <hr class="hr-2 eventures-bg-color"/>
 
     <div class="button-holder d-flex justify-content-center">
         <button type="submit" class="btn eventures-bg-color">Login</button>
@@ -32,3 +32,4 @@
         <a asp-controller="Users" asp-action="Register" class="btn-link">Register as a new user</a>
     </div>
 </form>
+
