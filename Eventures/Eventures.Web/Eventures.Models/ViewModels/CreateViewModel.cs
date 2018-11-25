@@ -22,7 +22,7 @@ namespace Eventures.Models.ViewModels
         [DataType(DataType.Date, ErrorMessage = "End field is not in valid date format!")]
         public DateTime End { get; set; }
         
-        [Range(0,int.MaxValue, ErrorMessage = "Value must be a positive number!")]
+        [Range(0, int.MaxValue, ErrorMessage = "Value must be a positive number!")]
         public int TotalTickets { get; set; }
         
         [Range(typeof(decimal), "0", "79228162514264337593543950335")]

@@ -16,5 +16,7 @@ namespace Eventures.Services.Interfaces
         void Order(OrderViewModel model, string userId);
 
         IEnumerable<MyEventsViewModel> GetMyEvents(ApplicationUser user);
+
+        IEnumerable<AllOrdersViewModel> GetAllOrders();
     }
 }

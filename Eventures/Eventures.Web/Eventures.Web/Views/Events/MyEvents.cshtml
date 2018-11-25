@@ -1,7 +1,7 @@
 ﻿@using System.Globalization
 @model IList<MyEventsViewModel>
 
-<h1 class="text-center font-weight-bold">All Events</h1>
+<h1 class="text-center font-weight-bold">My Events</h1>
 <hr class="hr-2 eventures-bg-color">
 
 <table class="table">
@@ -15,7 +15,7 @@
         </tr>
     </thead>
     <tbody>
-        @for (int index = 0; index < @Model.Count; index++)
+        @for (int index = 0; index < Model.Count; index++)
         {
             <tr>
                 <th scope="row">@(index + 1)</th>

@@ -10,7 +10,7 @@ namespace Eventures.Models.ViewModels
         public Guid EventId { get; set; }
 
         [Required]
-        [Range(0, int.MaxValue)]
-        public int TicketsCount { get; set; }
+        [Range(1, int.MaxValue, ErrorMessage = "The minimum count is 1!")]
+        public int? TicketsCount { get; set; }
     }
 }

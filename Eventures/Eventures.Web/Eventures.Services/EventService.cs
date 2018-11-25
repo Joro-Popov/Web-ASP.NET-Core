@@ -64,13 +64,14 @@ namespace Eventures.Services
             {
                 EventId = model.EventId,
                 OrderedOn = DateTime.UtcNow,
-                TicketsCount = model.TicketsCount,
+                TicketsCount = model.TicketsCount ?? 0,
                 UserId = userId
             };
 
             this.Context.Orders.Add(order);
             this.Context.SaveChanges();
         }
+
         public IEnumerable<MyEventsViewModel> GetMyEvents(ApplicationUser user)
         {
             var events = user.Orders
@@ -83,6 +84,19 @@ namespace Eventures.Services
                 });
 
             return events;
+        }
+
+        public IEnumerable<AllOrdersViewModel> GetAllOrders()
+        {
+            var orders = this.Context.Orders
+                .Select(o => new AllOrdersViewModel()
+                {
+                    Event = o.Event.Name,
+                    Customer = o.User.FirstName,
+                    OrderedOn = o.OrderedOn.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture)
+                });
+
+            return orders;
         }
     }
 }

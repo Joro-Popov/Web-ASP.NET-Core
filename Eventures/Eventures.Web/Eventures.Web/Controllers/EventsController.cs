@@ -75,5 +75,13 @@ namespace Eventures.Web.Controllers
 
             return this.View("MyEvents");
         }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult AllOrders()
+        {
+            var orders = this.eventService.GetAllOrders().ToList();
+
+            return this.View(orders);
+        }
     }
 }
