@@ -12,5 +12,9 @@ namespace Eventures.Services.Interfaces
         Task<IEnumerable<EventViewModel>> GetAllEventsAsync();
 
         void CreateEvent(CreateViewModel model);
+
+        void Order(OrderViewModel model, string userId);
+
+        IEnumerable<MyEventsViewModel> GetMyEvents(ApplicationUser user);
     }
 }

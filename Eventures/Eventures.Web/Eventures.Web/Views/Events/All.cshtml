@@ -11,7 +11,7 @@
         <th scope="col">Name</th>
         <th scope="col">Start</th>
         <th scope="col">End</th>
-        <th scope="col">Place</th>
+        <th scope="col">Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -22,7 +22,9 @@
             <td>@Model[index].Name</td>
             <td>@Model[index].Start</td>
             <td>@Model[index].End</td>
-            <td>@Model[index].Place</td>
+            <td>
+               <partial name="OrderPartial" model="new OrderViewModel(){EventId = @Model[index].EventId}"/>
+            </td>
         </tr>
     }
     </tbody>

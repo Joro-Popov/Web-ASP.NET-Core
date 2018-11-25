@@ -5,12 +5,10 @@ using System.Text;
 
 namespace Eventures.Models.ViewModels
 {
-    public class EventViewModel
+    public class MyEventsViewModel
     {
-        public Guid EventId { get; set; }
-
         [Required]
-        [MinLength(10,ErrorMessage = "Name must be at least {1} characters long!")]
+        [MinLength(10, ErrorMessage = "Name must be at least {1} characters long!")]
         public string Name { get; set; }
 
         [Required]
@@ -20,10 +18,7 @@ namespace Eventures.Models.ViewModels
         [Required]
         [DataType(DataType.Date, ErrorMessage = "End field is not in valid date format!")]
         public string End { get; set; }
-
-        [Required]
-        public string Place { get; set; }
-
+        
         [Range(0, int.MaxValue)]
         public int Tickets { get; set; }
     }

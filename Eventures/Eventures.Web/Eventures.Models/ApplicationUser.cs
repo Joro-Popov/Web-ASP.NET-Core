@@ -13,5 +13,7 @@ namespace Eventures.Models
         public string LastName { get; set; }
         
         public string UCN { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; } = new HashSet<Order>();
     }
 }

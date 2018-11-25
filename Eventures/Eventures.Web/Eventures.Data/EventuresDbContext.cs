@@ -22,6 +22,8 @@ namespace Eventures.Data
 
         public DbSet<Event> Events { get; set; }
 
+        public DbSet<Order> Orders { get; set; }
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default) =>
             this.SaveChangesAsync(true, cancellationToken);
     }

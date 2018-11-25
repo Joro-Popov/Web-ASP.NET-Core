@@ -29,6 +29,7 @@ namespace Eventures.Services
             var events = await this.Context.Events
                 .Select(e => new EventViewModel()
                 {
+                    EventId = e.Id,
                     Name = e.Name,
                     Start = e.Start.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture),
                     End = e.End.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture),
@@ -55,6 +56,33 @@ namespace Eventures.Services
             this.Context.SaveChanges();
 
             this.logger.LogInformation($"Event created: {newEvent.Name}");
+        }
+
+        public void Order(OrderViewModel model, string userId)
+        {
+            var order = new Order()
+            {
+                EventId = model.EventId,
+                OrderedOn = DateTime.UtcNow,
+                TicketsCount = model.TicketsCount,
+                UserId = userId
+            };
+
+            this.Context.Orders.Add(order);
+            this.Context.SaveChanges();
+        }
+        public IEnumerable<MyEventsViewModel> GetMyEvents(ApplicationUser user)
+        {
+            var events = user.Orders
+                .Select(o => new MyEventsViewModel()
+                {
+                    Name = o.Event.Name,
+                    End = o.Event.End.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture),
+                    Start = o.Event.Start.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture),
+                    Tickets = o.TicketsCount
+                });
+
+            return events;
         }
     }
 }

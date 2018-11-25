@@ -38,7 +38,8 @@ namespace Eventures.Web
             });
 
             services.AddDbContext<EventuresDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+                       .UseLazyLoadingProxies());
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
                 {
