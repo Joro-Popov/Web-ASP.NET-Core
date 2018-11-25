@@ -78,7 +78,7 @@ namespace Eventures.Web.Controllers
 
             returnUrl = returnUrl ?? Url.Content("~/");
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var user = new ApplicationUser
                 {
@@ -91,9 +91,9 @@ namespace Eventures.Web.Controllers
 
                 var createResult = await userManager.CreateAsync(user, input.Password);
 
-                var addToRoleResult = await this.userManager.AddToRoleAsync(user, "User");
+                await this.userManager.AddToRoleAsync(user, "User");
 
-                if (createResult.Succeeded && addToRoleResult.Succeeded)
+                if (createResult.Succeeded)
                 {
                     await signInManager.SignInAsync(user, isPersistent: false);
 
@@ -101,11 +101,6 @@ namespace Eventures.Web.Controllers
                 }
 
                 foreach (var error in createResult.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, error.Description);
-                }
-
-                foreach (var error in addToRoleResult.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
