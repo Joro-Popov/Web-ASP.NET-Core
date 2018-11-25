@@ -18,6 +18,7 @@ namespace Eventures.Models.ViewModels
 
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
         [Compare(nameof(Password), ErrorMessage = "Passwords do not match!")]
         public string ConfirmPassword { get; set; }
 
@@ -27,10 +28,12 @@ namespace Eventures.Models.ViewModels
 
         [Required]
         [MinLength(3, ErrorMessage = "First Name must be at least {1} characters long!")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
         [MinLength(3, ErrorMessage = "Last Name must be at least {1} characters long!")]
+        [Display( Name = "Last Name")]
         public string LastName { get; set; }
 
         [Required]

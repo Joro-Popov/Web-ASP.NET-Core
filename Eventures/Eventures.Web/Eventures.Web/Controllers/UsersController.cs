@@ -78,34 +78,40 @@ namespace Eventures.Web.Controllers
 
             returnUrl = returnUrl ?? Url.Content("~/");
 
-            if (!ModelState.IsValid) return this.View();
-
-            var user = new ApplicationUser
-            { 
-                UserName = input.Username,
-                Email = input.Email,
-                FirstName = input.FirstName,
-                LastName = input.LastName,
-                UCN = input.UCN
-            };
-
-            var result = await userManager.CreateAsync(user, input.Password);
-
-            await this.userManager.AddToRoleAsync(user, "User");
-
-            if (result.Succeeded)
+            if (!ModelState.IsValid)
             {
-                await signInManager.SignInAsync(user, isPersistent: false);
+                var user = new ApplicationUser
+                {
+                    UserName = input.Username,
+                    Email = input.Email,
+                    FirstName = input.FirstName,
+                    LastName = input.LastName,
+                    UCN = input.UCN
+                };
 
-                return LocalRedirect(returnUrl);
+                var createResult = await userManager.CreateAsync(user, input.Password);
+
+                var addToRoleResult = await this.userManager.AddToRoleAsync(user, "User");
+
+                if (createResult.Succeeded && addToRoleResult.Succeeded)
+                {
+                    await signInManager.SignInAsync(user, isPersistent: false);
+
+                    return LocalRedirect(returnUrl);
+                }
+
+                foreach (var error in createResult.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+
+                foreach (var error in addToRoleResult.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
             }
 
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError(string.Empty, error.Description);
-            }
-
-            return this.View(input);
+            return this.View(); 
         }
 
         [HttpPost]
