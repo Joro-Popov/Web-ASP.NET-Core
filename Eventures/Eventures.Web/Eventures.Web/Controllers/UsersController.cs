@@ -31,13 +31,6 @@ namespace Eventures.Web.Controllers
         {
             if (this.User.Identity.IsAuthenticated) return this.RedirectToAction("Index", "Home");
 
-            if (!string.IsNullOrEmpty(ErrorMessage))
-            {
-                ModelState.AddModelError(string.Empty, ErrorMessage);
-            }
-
-            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
-
             return this.View();
         }
 
