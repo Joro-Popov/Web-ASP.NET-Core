@@ -27,7 +27,7 @@ namespace Eventures.Web.Controllers
         public string ErrorMessage { get; set; }
 
         [HttpGet]
-        public async Task<IActionResult> Login()
+        public IActionResult Login()
         {
             if (this.User.Identity.IsAuthenticated) return this.RedirectToAction("Index", "Home");
 
