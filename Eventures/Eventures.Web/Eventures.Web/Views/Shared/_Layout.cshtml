@@ -13,18 +13,19 @@
 </head>
 <body>
 <header>
-    @if (!this.User.Identity.IsAuthenticated)
+    @if (this.User.IsInRole("Admin"))
     {
-        <partial name="GuestMenuNavigation"/> 
+    <partial name="AdminMenuNavigation"/>
     }
-    else if (this.User.IsInRole("Admin"))
+    else if (!this.User.Identity.IsAuthenticated)
     {
-        <partial name="AdminMenuNavigation"/>
+        <partial name="GuestMenuNavigation"/>
     }
-    else if (this.User.IsInRole("User")) 
+    else if (this.User.IsInRole("User") || this.User.Identity.IsAuthenticated)
     {
         <partial name="UserMenuNavigation"/>
     }
+
 </header>
 <main class="mt-3 container">
     @RenderBody()
