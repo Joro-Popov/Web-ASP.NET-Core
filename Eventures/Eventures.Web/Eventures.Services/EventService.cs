@@ -92,7 +92,7 @@ namespace Eventures.Services
                 .Select(o => new AllOrdersViewModel()
                 {
                     Event = o.Event.Name,
-                    Customer = o.User.FirstName,
+                    Customer = o.User.UserName,
                     OrderedOn = o.OrderedOn.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture)
                 });
 
