@@ -26,12 +26,45 @@ namespace Eventures.Web.Controllers
         [TempData]
         public string ErrorMessage { get; set; }
 
+        public IList<AuthenticationScheme> ExternalLogins { get; set; }
+
         [HttpGet]
-        public IActionResult Login()
+        public async Task<IActionResult> Login()
         {
             if (this.User.Identity.IsAuthenticated) return this.RedirectToAction("Index", "Home");
 
+            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+
+            this.ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
+            this.ViewBag.ExternalLogins = this.ExternalLogins;
+
             return this.View();
+        }
+
+        [HttpPost]
+        public IActionResult LoginWithFacebook(string provider, string returnUrl)
+        {
+            var redirectUrl = Url.Action("LoginWithFacebook");
+            var properties = this.signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
+            return new ChallengeResult(provider, properties);
+        }
+        
+        public async Task<IActionResult> LoginWithFacebook(string returnUrl = null)
+        {
+            returnUrl = returnUrl ?? Url.Content("~/");
+
+            var info = await this.signInManager.GetExternalLoginInfoAsync();
+
+            var result = await this.signInManager
+                .ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
+            
+            if (result.Succeeded)
+            {
+                return LocalRedirect(returnUrl);
+            }
+
+            return this.RedirectToAction("Login");
         }
 
         [HttpPost]

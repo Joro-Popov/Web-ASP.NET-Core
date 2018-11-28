@@ -42,15 +42,22 @@ namespace Eventures.Web
                        .UseLazyLoadingProxies());
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
-                {
-                    options.Password.RequireNonAlphanumeric = false;
-                    options.Password.RequireUppercase = false;
-                    options.Password.RequireLowercase = false;
-                    options.Password.RequiredLength = 6;
-                    options.Password.RequiredUniqueChars = 0; 
-                })
-                .AddEntityFrameworkStores<EventuresDbContext>()
-                .AddDefaultTokenProviders();
+            {
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 0; 
+            })
+            .AddEntityFrameworkStores<EventuresDbContext>()
+            .AddDefaultTokenProviders();
+
+            services.AddAuthentication()
+                .AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
 
             services.AddLogging(x => x.AddConsole());
 

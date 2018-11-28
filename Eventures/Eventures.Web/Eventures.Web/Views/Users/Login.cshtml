@@ -15,11 +15,11 @@
         <span asp-validation-for="@Model.Password" class="text-danger"></span>
     </div>
 
-    <hr class="hr-2 eventures-bg-color"/>
+    <hr class="hr-2 eventures-bg-color" />
     <div class="form-group text-center">
-        <input asp-for="RememberMe" type="checkbox"/> Remember me?
+        <input asp-for="RememberMe" type="checkbox" /> Remember me?
     </div>
-    <hr class="hr-2 eventures-bg-color"/>
+    <hr class="hr-2 eventures-bg-color" />
 
     <div class="button-holder d-flex justify-content-center">
         <button type="submit" class="btn eventures-bg-color">Login</button>
@@ -31,4 +31,17 @@
     <div class="form-group text-center active">
         <a asp-controller="Users" asp-action="Register" class="btn-link">Register as a new user</a>
     </div>
+</form>
+
+<form asp-action="LoginWithFacebook" method="post">
+    <hr class="hr-2 eventures-bg-color half-width" />
+
+    @foreach (var provider in ViewBag.ExternalLogins)
+    {
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn eventures-bg-color" name="provider" value="@provider.Name">@provider.DisplayName</button>
+        </div>
+    }
+
+    <hr class="hr-2 eventures-bg-color half-width" />
 </form>
