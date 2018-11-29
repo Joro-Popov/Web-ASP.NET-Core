@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Eventures.Data;
 using Eventures.Models;
 using Eventures.Services;
 using Eventures.Services.Interfaces;
 using Eventures.Web.CustomMiddlewareExtensions;
+using Eventures.Web.Mappings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -60,6 +62,7 @@ namespace Eventures.Web
             });
 
             services.AddLogging(x => x.AddConsole());
+            services.AddAutoMapper(cfg => cfg.AddProfile<DomainProfile>());
 
             services.AddScoped<RoleManager<IdentityRole>>();
             services.AddScoped<UserManager<ApplicationUser>>();

@@ -4,11 +4,13 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Eventures.Data;
 using Eventures.Models;
 using Eventures.Models.ViewModels;
 using Eventures.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Logging;
 
 namespace Eventures.Services
@@ -17,25 +19,22 @@ namespace Eventures.Services
     {
         private readonly ILogger<EventService> logger;
         public EventuresDbContext Context { get; }
+        public IMapper Mapper { get; }
 
-        public EventService(EventuresDbContext context, ILogger<EventService> logger)
+        public EventService(EventuresDbContext context, 
+                            ILogger<EventService> logger,
+                            IMapper mapper)
         {
             this.logger = logger;
             Context = context;
+            Mapper = mapper;
         }
 
         public async Task<IEnumerable<EventViewModel>> GetAllEventsAsync()
         {
             var events = await this.Context.Events
                 .Where(e => e.TotalTickets > 0)
-                .Select(e => new EventViewModel()
-                {
-                    EventId = e.Id,
-                    Name = e.Name,
-                    Start = e.Start.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture),
-                    End = e.End.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture),
-                    Place = e.Place
-                })
+                .Select(e => this.Mapper.Map<EventViewModel>(e))
                 .ToListAsync();
 
             return events;
@@ -56,7 +55,7 @@ namespace Eventures.Services
             this.Context.Events.Add(newEvent);
             this.Context.SaveChanges();
 
-            this.logger.LogInformation($"Event created: {newEvent.Name}");
+            this.logger.LogInformation($"EventName created: {newEvent.Name}");
         }
 
         public void Order(int tickets, string userId, Guid eventId)
@@ -78,13 +77,7 @@ namespace Eventures.Services
         public IEnumerable<MyEventsViewModel> GetMyEvents(ApplicationUser user)
         {
             var events = user.Orders
-                .Select(o => new MyEventsViewModel()
-                {
-                    Name = o.Event.Name,
-                    End = o.Event.End.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture),
-                    Start = o.Event.Start.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture),
-                    Tickets = o.TicketsCount
-                });
+                .Select(o => this.Mapper.Map<MyEventsViewModel>(o));
 
             return events;
         }
@@ -92,12 +85,8 @@ namespace Eventures.Services
         public IEnumerable<AllOrdersViewModel> GetAllOrders()
         {
             var orders = this.Context.Orders
-                .Select(o => new AllOrdersViewModel()
-                {
-                    Event = o.Event.Name,
-                    Customer = o.User.UserName,
-                    OrderedOn = o.OrderedOn.ToString("dd-MMM-yy HH:mm:ss", CultureInfo.InvariantCulture)
-                });
+                .ToList()
+                .Select(o => this.Mapper.Map<AllOrdersViewModel>(o));
 
             return orders;
         }

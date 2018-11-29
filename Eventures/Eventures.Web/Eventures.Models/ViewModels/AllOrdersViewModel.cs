@@ -6,7 +6,7 @@ namespace Eventures.Models.ViewModels
 {
     public class AllOrdersViewModel
     {
-        public string Event { get; set; }
+        public string EventName { get; set; }
 
         public string Customer { get; set; }
 
