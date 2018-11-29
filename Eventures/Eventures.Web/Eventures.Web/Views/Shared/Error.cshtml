@@ -1,10 +1,10 @@
-﻿@model ErrorViewModel
-@{
+﻿@{
     ViewData["Title"] = "Error";
 }
-@for (int i = 0; i < ViewData.Count; i++)
-{
-    <div class="alert alert-danger" role="alert">
-        @ViewData[$"Exception {i}"]
-    </div>
-}
+
+<div class="alert alert-danger" role="alert">
+    @ViewData["Message"]
+</div>
+<div class="button-holder d-flex justify-content-start">
+    <a asp-controller="Events" asp-action="All" class="btn eventures-bg-color">Back</a>
+</div>

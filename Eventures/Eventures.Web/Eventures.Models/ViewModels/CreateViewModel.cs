@@ -16,6 +16,7 @@ namespace Eventures.Models.ViewModels
 
         [Required]
         [DataType(DataType.Date, ErrorMessage = "Start field is not in valid date format!")]
+        [DisplayFormat(DataFormatString = "dd-MMM-yy HH:mm:ss")]
         public DateTime Start { get; set; }
 
         [Required]

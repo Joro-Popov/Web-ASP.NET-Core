@@ -27,6 +27,7 @@ namespace Eventures.Services
         public async Task<IEnumerable<EventViewModel>> GetAllEventsAsync()
         {
             var events = await this.Context.Events
+                .Where(e => e.TotalTickets > 0)
                 .Select(e => new EventViewModel()
                 {
                     EventId = e.Id,
@@ -58,13 +59,15 @@ namespace Eventures.Services
             this.logger.LogInformation($"Event created: {newEvent.Name}");
         }
 
-        public void Order(int? tickets, string userId, Guid eventId)
+        public void Order(int tickets, string userId, Guid eventId)
         {
+            this.ReduceEventTickets(tickets, eventId);
+
             var order = new Order()
             {
                 EventId = eventId,
                 OrderedOn = DateTime.UtcNow,
-                TicketsCount = tickets ?? 0,
+                TicketsCount = tickets,
                 UserId = userId
             };
 
@@ -97,6 +100,25 @@ namespace Eventures.Services
                 });
 
             return orders;
+        }
+
+        public int GetTicketsLeft(Guid eventId)
+        {
+            var currentEvent = this.Context.Events
+                .FirstOrDefault(e => e.Id == eventId);
+
+            return currentEvent.TotalTickets;
+        }
+
+        private void ReduceEventTickets(int tickets, Guid eventId)
+        {
+            var currentEvent = this.Context.Events
+                .FirstOrDefault(e => e.Id == eventId);
+
+            currentEvent.TotalTickets -= tickets;
+
+            this.Context.Events.Update(currentEvent);
+            this.Context.SaveChanges();
         }
     }
 }

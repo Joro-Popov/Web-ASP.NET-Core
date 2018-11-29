@@ -42,7 +42,7 @@ namespace Eventures.Web.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Create(CreateViewModel model)
         {
-            if(!ModelState.IsValid) return this.View();
+            if(!ModelState.IsValid) return this.View(model);
 
             this.eventService.CreateEvent(model);
 
@@ -67,13 +67,22 @@ namespace Eventures.Web.Controllers
             {
                 var user = await this.userManager.GetUserAsync(this.User);
                 var userId = await this.userManager.GetUserIdAsync(user);
+                var ticketsLeft = this.eventService.GetTicketsLeft(eventId);
 
-                this.eventService.Order(tickets, userId, eventId);
+                if (ticketsLeft - tickets >= 0)
+                {
+                    this.eventService.Order(tickets, userId, eventId);
 
-                return this.RedirectToAction("MyEvents");
+                    return this.RedirectToAction("MyEvents");
+                }
+
+                this.ViewData["Message"] = $"Only {ticketsLeft} tickets left for this event!";
+
+                return this.View("Error");
+
             }
 
-            return this.View("MyEvents");
+            return this.RedirectToAction("All");
         }
 
         [Authorize(Roles = "Admin")]
