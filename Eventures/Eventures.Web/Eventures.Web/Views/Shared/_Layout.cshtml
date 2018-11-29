@@ -15,7 +15,7 @@
 <header>
     @if (this.User.IsInRole("Admin"))
     {
-    <partial name="AdminMenuNavigation"/>
+        <partial name="AdminMenuNavigation"/>
     }
     else if (!this.User.Identity.IsAuthenticated)
     {

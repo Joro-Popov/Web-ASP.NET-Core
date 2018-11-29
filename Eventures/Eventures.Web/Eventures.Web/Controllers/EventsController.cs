@@ -61,14 +61,14 @@ namespace Eventures.Web.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Order(OrderViewModel model)
+        public async Task<IActionResult> Order(int tickets, Guid eventId)
         {
             if (ModelState.IsValid)
             {
                 var user = await this.userManager.GetUserAsync(this.User);
                 var userId = await this.userManager.GetUserIdAsync(user);
 
-                this.eventService.Order(model,userId);
+                this.eventService.Order(tickets, userId, eventId);
 
                 return this.RedirectToAction("MyEvents");
             }

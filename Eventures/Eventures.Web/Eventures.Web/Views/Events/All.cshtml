@@ -23,7 +23,14 @@
             <td>@Model[index].Start</td>
             <td>@Model[index].End</td>
             <td>
-               <partial name="OrderPartial" model="new OrderViewModel(){EventId = @Model[index].EventId}"/>
+                <form asp-controller="Events" asp-action="Order" asp-route-eventId="@Model[index].EventId" method="post" class="form-inline">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group mx-sm-2 mb-2">
+                        <label for="OrderedTickets" class="font-weight-bold mx-sm-2">Tickets</label>
+                        <input type="number" class="form-control" name="Tickets" id="OrderedTickets">
+                    </div>
+                    <button type="submit" class="btn eventures-bg-color mb-2">Order</button>
+                </form>
             </td>
         </tr>
     }

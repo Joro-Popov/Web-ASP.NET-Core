@@ -58,13 +58,13 @@ namespace Eventures.Services
             this.logger.LogInformation($"Event created: {newEvent.Name}");
         }
 
-        public void Order(OrderViewModel model, string userId)
+        public void Order(int? tickets, string userId, Guid eventId)
         {
             var order = new Order()
             {
-                EventId = model.EventId,
+                EventId = eventId,
                 OrderedOn = DateTime.UtcNow,
-                TicketsCount = model.TicketsCount ?? 0,
+                TicketsCount = tickets ?? 0,
                 UserId = userId
             };
 

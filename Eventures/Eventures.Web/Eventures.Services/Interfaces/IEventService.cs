@@ -13,7 +13,7 @@ namespace Eventures.Services.Interfaces
 
         void CreateEvent(CreateViewModel model);
 
-        void Order(OrderViewModel model, string userId);
+        void Order(int? tickets, string userId, Guid eventId);
 
         IEnumerable<MyEventsViewModel> GetMyEvents(ApplicationUser user);
 
